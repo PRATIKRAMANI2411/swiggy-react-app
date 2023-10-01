@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid #000;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-items ul li {
+    padding: 10px;
+}
+
+.card {
+    width: 229px;
+    border: 1px solid #cccc;
+    padding: 5px;
+    margin: 10px;
+}
+
+.card>img {
+    width: 100%;
+}
+
+.card>p {
+    color: chocolate;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-container{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .shimmer{
+    background: rgb(193,193,193);
+    position:relative;
+    background-repeat: no-repeat;
+    width:229px;
+    height:299px;
+    margin: 5px;
+    
+  }
+  .shimmer::before{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background: linear-gradient(-60deg, rgba(193,193,193,1) 0%, rgba(193,193,193,1) 35%, rgba(232,232,232,1) 50%, rgba(193,193,193,1) 65%, rgba(193,193,193,1) 100%);
+    animation-name: shimmer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-repeat:no-repeat;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -300px 0%;
+    }
+    100% {
+      background-position: 300px 0%;
+    }
+  }
+
+.error-404-url {
+  width: 550px;
+  margin: 90px 160px;
+}
+
+.error-404-url * {
+  margin-bottom: 50px;
+  color: #383737;
+}
+
+.error-404-url h1 {
+  width: auto;
+  display: inline-block;
+  font-size: 7em;
+  line-height: 100%;
+  letter-spacing: 0.2em;
+  text-shadow: 8px -3px 0 rgba(240, 85, 85, 0.6), -10px 5px 0 rgba(72, 104, 244, 0.6), 9px 7px 0 rgba(255, 219, 89, 0.6);
+  transition: all 0.2s ease;
+}
+.error-404-url h1:hover {
+  text-shadow: 4px -1px 0 rgba(240, 85, 85, 0.6), -5px 2px 0 rgba(72, 104, 244, 0.6), 6px 3px 0 rgba(255, 219, 89, 0.6);
+  transition: all 0.2s ease;
+}
+
+.error-404-url h3 {
+  font-size: 2.5em;
+}
+
+.error-404-url a {
+  padding: 15px 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  background-color: rgba(240, 85, 85, 0.9);
+  box-shadow: -7px 7px 0 rgba(72, 104, 244, 0.7), -12px 12px 0 rgba(255, 219, 89, 0.8);
+  transition: all 0.2s ease;
+}
+.error-404-url a:hover {
+  box-shadow: -3px 3px 0 rgba(72, 104, 244, 0.7), -6px 6px 0 rgba(255, 219, 89, 0.8);
+  transition: all 0.2s ease;
+}
