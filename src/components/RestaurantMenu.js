@@ -6,6 +6,8 @@ const RestaurantMenu = () => {
     const { restId } = useParams();
     const restrauntInfo = useRestrauntMenu(restId);
 
+    console.log('check');
+
     return (
         <>
             <div>
