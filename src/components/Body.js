@@ -22,12 +22,7 @@ const Body = () => {
     //     console.log(json);
 
     // }
-    // console.log(useOnline);
-    const offline = useOnline()
-    if(!offline){
-        return <h1>you are offline 🔴</h1>
-    }
-
+    
     useEffect(() => {
         fetchData();
     }, [])
@@ -38,9 +33,13 @@ const Body = () => {
             .then((res) => res.json())
             .then((data) => {
                 setResatrolist(data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-                console.log('resatrolist123', data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             })
             .catch((err) => { console.log(err); })
+    }
+
+    const offline = useOnline()
+    if (!offline) {
+        return <h1>You are a offline 🔴</h1>
     }
 
 
