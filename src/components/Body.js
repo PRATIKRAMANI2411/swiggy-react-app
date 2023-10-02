@@ -3,6 +3,7 @@ import { restaurantList } from "../utils/contants.js";
 import ReasturantCard from "./RestaurantCard.js";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline.js";
 
 const Body = () => {
     const [resatrolist, setResatrolist] = useState({});
@@ -21,6 +22,11 @@ const Body = () => {
     //     console.log(json);
 
     // }
+    // console.log(useOnline);
+    const offline = useOnline()
+    if(!offline){
+        return <h1>you are offline 🔴</h1>
+    }
 
     useEffect(() => {
         fetchData();
