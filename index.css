@@ -1,4 +1,9 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header {
     display: flex;
     justify-content: space-between;
     margin: 10px;
@@ -115,4 +120,4 @@
 .error-404-url a:hover {
   box-shadow: -3px 3px 0 rgba(72, 104, 244, 0.7), -6px 6px 0 rgba(255, 219, 89, 0.8);
   transition: all 0.2s ease;
-}
+} */

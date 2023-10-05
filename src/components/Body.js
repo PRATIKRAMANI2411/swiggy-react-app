@@ -44,7 +44,7 @@ const Body = () => {
 
 
     return (
-        <div className="restaurant-list">
+        <div className="flex flex-wrap">
             {
                 resatrolist.length ? (
                     resatrolist.map((restaurant) => (
