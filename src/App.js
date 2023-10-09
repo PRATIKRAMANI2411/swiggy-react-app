@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 // const heading = React.createElement(
 //     "h1",
@@ -21,11 +23,11 @@ const About = lazy(() => import("./components/About"))
 
 const AppLayout = () => {
     return (
-        <>
+        <Provider store={store}>
             <Header />
             <Outlet />
             <Footer />
-        </>
+        </Provider>
     )
 }
 
