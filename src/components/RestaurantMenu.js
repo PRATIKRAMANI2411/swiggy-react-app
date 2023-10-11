@@ -1,21 +1,20 @@
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestrauntMenu from "../utils/useRestrauntMenu";
+import RestaurantCartitem from "./RestaurantCartitem";
 
 const RestaurantMenu = () => {
     const { restId } = useParams();
     const restrauntInfo = useRestrauntMenu(restId);
 
-    console.log(restrauntInfo);
-
+    console.log('restrauntInfo',restrauntInfo);
     return (
         <>
             <div>
-                <h2>{restId} </h2>
                 {
                     restrauntInfo.length ? (
                         restrauntInfo.map((category) => (
-                            <p key={category.id} >{category?.card?.info?.name}</p>
+                            <RestaurantCartitem key={category.id} {...category?.card?.info} />
                         ))
                     ) : (
                         <Shimmer />

@@ -12,7 +12,7 @@ const useRestrauntMenu = (resId) => {
     useEffect(() => {
         fatchrestauMenu();
     }, [])
-    console.log('userestaurantmenu',restaurantmenu);
+    // console.log('userestaurantmenu',restaurantmenu);
     return restaurantmenu;
 }
 
