@@ -7,14 +7,16 @@ const RestaurantMenu = () => {
     const { restId } = useParams();
     const restrauntInfo = useRestrauntMenu(restId);
 
-    console.log('restrauntInfo',restrauntInfo);
+    // console.log('restrauntInfo',restrauntInfo);
     return (
         <>
             <div>
                 {
                     restrauntInfo.length ? (
                         restrauntInfo.map((category) => (
-                            <RestaurantCartitem key={category.id} {...category?.card?.info} />
+                            <div className="container flex justify-center">
+                                <RestaurantCartitem key={category.id} {...category?.card} />
+                            </div>
                         ))
                     ) : (
                         <Shimmer />

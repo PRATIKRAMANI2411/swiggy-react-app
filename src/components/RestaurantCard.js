@@ -12,7 +12,7 @@ const ReasturantCard = (props) => {
 
 
 
-            <div class="w-52 p-2 m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-50 dark:border-gray-700">
+            <div class="w-72 p-2 m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-50 dark:border-gray-700">
                 <a href="#">
                     <img class="rounded-t-lg" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="" />
                 </a>

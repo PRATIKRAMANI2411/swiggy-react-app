@@ -9,6 +9,7 @@ import Error from "./components/Error"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import Cart from "./components/Cart";
 
 // const heading = React.createElement(
 //     "h1",
@@ -48,6 +49,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/restaurants/:restId',
                 element: <RestaurantMenu />
+            },
+            {
+                path : '/cart',
+                element: <Cart/>
             },
         ],
     },
