@@ -2,6 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+.banner-slider .slick-slider .slick-prev,
+.banner-slider .slick-slider .slick-next {
+  color: black;
+}
+
+.banner-slider .slick-slide img {
+  border-radius: 20px;
+  display: block;
+}
+
+.banner-slider .slick-slider .slick-prev {
+  position: absolute;
+  left: 1100px;
+  z-index: 99;
+  top: -25px;
+  background-color: #e3e0e0;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.banner-slider .slick-slider .slick-next {
+  position: absolute;
+  top: -25px;
+  right: 17px;
+  background-color: #e3e0e0;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.banner-slider .slick-list {
+  margin: 0 -5px;
+}
+
+.banner-slider .slick-slide>div {
+  padding: 0 9px;
+}
+.banner-second-slider .slick-slider .slick-prev,
+.banner-second-slider .slick-slider .slick-next {
+  color: black;
+}
+
+.banner-second-slider .slick-slide img {
+  border-radius: 20px;
+  display: block;
+}
+
+.banner-second-slider .slick-slider .slick-prev {
+  position: absolute;
+  left: 1100px;
+  z-index: 99;
+  top: -25px;
+  background-color: #e3e0e0;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.banner-second-slider .slick-slider .slick-next {
+  position: absolute;
+  top: -25px;
+  right: 17px;
+  background-color: #e3e0e0;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.banner-second-slider .slick-list {
+  margin: 0 -5px;
+}
+
+.banner-second-slider .slick-slide>div {
+  padding: 0 9px;
+}
+
+
 /* .container {
   padding-right: 15px;
   padding-left: 15px;

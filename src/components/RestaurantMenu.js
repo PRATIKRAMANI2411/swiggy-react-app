@@ -7,7 +7,7 @@ const RestaurantMenu = () => {
     const { restId } = useParams();
     const restrauntInfo = useRestrauntMenu(restId);
 
-    // console.log('restrauntInfo',restrauntInfo);
+    console.log('restrauntInfo',restrauntInfo);
     return (
         <>
             <div>

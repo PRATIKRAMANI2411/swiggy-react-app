@@ -1,48 +1,40 @@
 import React from "react";
 import Slider from "react-slick";
+import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 
 
-const BannerSlider = () => {
+const BannerSlider = (props) => {
+  const { bannerdata } = props
+  
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 1,
+    initialSlide: 0,
+    nextArrow: <HiArrowLongRight />,
+    prevArrow: <HiArrowLongLeft />
   };
   return (
-    <div>
-      <h2> Multiple items </h2>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div>
-        <div>
-          <h3>9</h3>
-        </div>
-      </Slider>
-    </div>
+    <>
+      <div className="container mx-auto banner-slider w-9/12">
+        <h1 className="text-2xl font-bold mb-4">Best offers for you</h1>
+        <Slider {...settings}>
+          {
+            bannerdata.length ? (
+              bannerdata.map((imageitem) => (
+                <div key={imageitem.id}>
+                  <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageitem.imageId} alt="banner image" />
+                </div>
+              ))
+            ) : (
+              <h1> Loding </h1>
+            )
+          }
+        </Slider>
+      </div>
+    </>
   )
 
 

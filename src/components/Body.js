@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { restaurantList } from "../utils/contants.js";
 import ReasturantCard from "./RestaurantCard.js";
-import Shimmer from "./Shimmer.js";
-import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline.js";
 import BannerSlider from "./BannerSlider.js";
+import SecondBanner from "./SecondBanner.js";
+import TopRestaurant from "./TopRestaurant.js";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [resatrolist, setResatrolist] = useState({});
+    const [mainbanner, setMainbanner] = useState({});
+    const [secondbanner, setSecondbanner] = useState({});
+    const [toprestaurant, setToprestaurant] = useState({});
     // const sample = resatrolist?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
 
@@ -34,7 +37,10 @@ const Body = () => {
         fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.21445607209604&lng=72.88447391241787&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
             .then((res) => res.json())
             .then((data) => {
-                setResatrolist(data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+                setToprestaurant(data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+                setMainbanner(data?.data?.cards[0]?.card?.card?.imageGridCards?.info)
+                setSecondbanner(data?.data?.cards[1]?.card?.card?.imageGridCards?.info)
+                setResatrolist(data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
             })
             .catch((err) => { console.log(err); })
     }
@@ -43,27 +49,16 @@ const Body = () => {
     if (!offline) {
         return <h1>You are a offline 🔴</h1>
     }
-    // console.log('resatrolist', resatrolist);
+    console.log('resatrolist', resatrolist);
 
     return (
         <>
-        <BannerSlider />
-            <div className="container mx-auto px-4 flex flex-wrap justify-center">
-                {
-                    resatrolist.length ? (
-                        resatrolist.map((restaurant) => (
-                            <Link key={restaurant?.info?.id} to={"/restaurants/" + restaurant?.info?.id}>
-                                <ReasturantCard resData={restaurant?.info}></ReasturantCard>
-                            </Link>
-                        ))
-                    ) : (
-                        <Shimmer />
-                    )
-
-                }
-            </div>
+            <BannerSlider bannerdata={mainbanner} />
+            <SecondBanner bannerdata={secondbanner} />
+            <TopRestaurant toprestaurant={toprestaurant} />
+            <ReasturantCard resatrolist={resatrolist} />
         </>
     )
 }
 
-export default Body; 
+export default Body;  
