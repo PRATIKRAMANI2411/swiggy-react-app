@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.banner-slider .slick-slider .slick-prev,
-.banner-slider .slick-slider .slick-next {
+.banner-slider .slick-prev,
+.banner-slider .slick-next {
   color: black;
+}
+
+.banner-slider .slick-prev:hover, .banner-slider .slick-prev:focus, .banner-slider .slick-next:hover, .banner-slider .slick-next:focus {
+  color: unset;
+  background-color: #929292;
+  outline: unset;
 }
 
 .banner-slider .slick-slide img {
@@ -12,7 +18,7 @@
   display: block;
 }
 
-.banner-slider .slick-slider .slick-prev {
+.banner-slider .slick-prev {
   position: absolute;
   left: 1100px;
   z-index: 99;
@@ -24,7 +30,7 @@
   border-radius: 50%;
 }
 
-.banner-slider .slick-slider .slick-next {
+.banner-slider .slick-next {
   position: absolute;
   top: -25px;
   right: 17px;

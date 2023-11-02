@@ -1,8 +1,10 @@
 
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer.js";
+import { MdStars } from "react-icons/Md";
 
 const ReasturantCard = (props) => {
+
     const { resatrolist } = props;
     return (
         <>
@@ -19,6 +21,7 @@ const ReasturantCard = (props) => {
                                     <Link key={restaurant?.info?.id} to={"/restaurants/" + restaurant?.info?.id}>
                                         <h5 className="text-xl font-bold tracking-tight text-gray-700 ">{restaurant?.info?.name}</h5>
                                     </Link>
+                                    <div className="text-green-500"><span className="text-green-500"><MdStars /></span></div>
                                     <p className="mb-3 font-normal text-gray-800 dark:text-gray-400">{restaurant?.info?.cuisines.join(", ")}</p>
                                 </div>
                             </div>
@@ -26,6 +29,7 @@ const ReasturantCard = (props) => {
                     ) : (<Shimmer />)
                 }
             </div>
+            <hr className="container mx-auto w-9/12 h-px my-8 bg-gray-200 border-0 dark:bg-gray-300"></hr>
         </>
     )
 }

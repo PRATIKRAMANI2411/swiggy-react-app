@@ -5,12 +5,16 @@ import BannerSlider from "./BannerSlider.js";
 import SecondBanner from "./SecondBanner.js";
 import TopRestaurant from "./TopRestaurant.js";
 import { Link } from "react-router-dom";
+import BestPlaceCities from "./BestplaceCities.js";
+import BestCuisines from "./BestCuisines.js";
 
 const Body = () => {
     const [resatrolist, setResatrolist] = useState({});
     const [mainbanner, setMainbanner] = useState({});
     const [secondbanner, setSecondbanner] = useState({});
     const [toprestaurant, setToprestaurant] = useState({});
+    const [bestplacecitise, setBestplacecitise] = useState({});
+    const [bestcuisines, setBestcuisines] = useState({});
     // const sample = resatrolist?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
 
@@ -41,6 +45,8 @@ const Body = () => {
                 setMainbanner(data?.data?.cards[0]?.card?.card?.imageGridCards?.info)
                 setSecondbanner(data?.data?.cards[1]?.card?.card?.imageGridCards?.info)
                 setResatrolist(data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+                setBestplacecitise(data?.data?.cards[7]?.card?.card?.brands)
+                setBestcuisines(data?.data?.cards[8]?.card?.card?.brands)
             })
             .catch((err) => { console.log(err); })
     }
@@ -57,6 +63,8 @@ const Body = () => {
             <SecondBanner bannerdata={secondbanner} />
             <TopRestaurant toprestaurant={toprestaurant} />
             <ReasturantCard resatrolist={resatrolist} />
+            <BestPlaceCities bestcitise={bestplacecitise}/>
+            <BestCuisines cuisines={bestcuisines}/>
         </>
     )
 }
